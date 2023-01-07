@@ -1,0 +1,82 @@
+// GENERAL
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin li-clickable ($line-height){
+    display: block;
+    width: 100%;
+    line-height: $line-height;
+}
+
+@mixin rounded($radius: em(10,20)) {
+    border-radius: $radius;
+}
+
+@mixin btn-default {
+    border: em(2,20) solid $primary-color;
+    color: $primary-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: $shadow-text;
+    padding-top: em(1);
+    @include rounded;
+
+    &:hover {
+        // border: em(2,20) solid $secondary-color;
+        // color: $secondary-color;
+        background-color: transparentize($secondary-color, .3);
+    }
+}
+
+
+// ANIMATIONS
+@mixin infinity-rotate {
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@mixin roll-and-slide {
+    animation-name: slide-left, roll-into;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+// SECTIONS
+@mixin h2-sections {
+    font-size: $h2-size;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: em(60,70);
+}
+
+@mixin h2-section-icons {
+    display: block;
+    font-size: em(50); //SET
+    margin: 0 auto em(30,50);
+    text-align: center;
+    color: $secondary-color;
+}
+
+@mixin h3-sections {
+    font: {
+        size: $h3-size;
+        // style: italic;
+    }
+    text-transform: uppercase;
+    margin-top: em(30, 25);
+    border-bottom: 2px solid $secondary-color;
+    margin: 0 auto em(12);
+    width: fit-content;
+}
+
+@mixin section-container {
+    width: 80%;
+    margin: 0 auto;
+}

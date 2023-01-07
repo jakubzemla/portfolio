@@ -1,0 +1,25 @@
+// ====== COLORS ===== //
+$primary-color: #fff;
+$secondary-color: #FFAF00;
+$ternary-color: #111;
+$shadow-color: #010101;
+
+//Outline logos
+$logos-color: #FF5722, #1572B6, #C76494, #EFD81D, #346FA0, $ternary-color, $ternary-color, #207196;
+
+
+
+// ===== TYPOGRAPHY ===== //
+$primary-font: 'Josefin Sans', sans-serif;
+
+$h1-size: em(70);
+$h2-size: em(35);
+$h3-size: em(25);
+$p-size: em(16);
+
+$shadow-text: em(4, 90) em(4, 90) em(2, 90) $shadow-color;
+
+
+
+// ===== OTHERS ===== //
+$sections-padding: em(60) 0 em(40);

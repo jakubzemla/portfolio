@@ -1,0 +1,36 @@
+@keyframes rotate-outline {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+/*STOP rotate element's childrens*/
+@keyframes stop-rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+@keyframes slide-left {
+    from {
+        right: -1500px
+    }
+    to {
+        right: 0px;
+    }
+}
+
+@keyframes roll-into {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(720deg)
+    }
+}

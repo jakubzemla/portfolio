@@ -78,7 +78,7 @@ body {
 }
 
 .hero {
-  background-image: url("/images/header_background2.jpg");
+  background-image: url("../images/header_background2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 9.375em;

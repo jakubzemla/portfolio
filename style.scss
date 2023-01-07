@@ -24,7 +24,7 @@ body {
 .hero {
     //background: linear-gradient(to right, $theme-color2, $theme-color1);
     background: {
-        image: url('/images/header_background2.jpg');
+        image: url('../images/header_background2.jpg');
         repeat: no-repeat;
         size: cover;
     }

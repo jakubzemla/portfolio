@@ -20,16 +20,34 @@
     color: $primary-color;
     text-decoration: none;
     text-transform: uppercase;
-    text-shadow: $shadow-text;
     padding-top: em(1);
+    background-color: transparentize($ternary-color, .7);
+    box-shadow: em(2) em(2) em(5) $shadow-color;
+    transition-property: background-color, transform, box-shadow;
+    transition-duration: 0.3s, 0.3s, 0.3s;
     @include rounded;
 
     &:hover {
-        // border: em(2,20) solid $secondary-color;
-        // color: $secondary-color;
-        background-color: transparentize($secondary-color, .3);
+        background-color: transparentize($ternary-color, .1);
+        transform: scale(1.05) translate(4%, 8%);
+        box-shadow: em(4) em(4) em(10) $shadow-color;
     }
 }
+
+@mixin background-fog {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+} /*DON'T FORGET TO:
+        - SET element, parent and all children position's to relative
+        - SET BG color or image
+        - SET opacity */
+        
 
 
 // ANIMATIONS
@@ -47,13 +65,27 @@
     animation-fill-mode: forwards;
 }
 
+@mixin get-from-fog {
+    animation-name: get-from-fog;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@mixin scale-from-nowhere {
+    animation-name: scale-from-nowhere;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
 
 // SECTIONS
 @mixin h2-sections {
     font-size: $h2-size;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: em(60,70);
+    margin-bottom: em(60,35);
 }
 
 @mixin h2-section-icons {

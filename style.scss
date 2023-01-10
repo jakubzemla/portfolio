@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: $primary-color;
     font: {
@@ -22,7 +26,6 @@ body {
 
 // ================== HEADER ================ // 
 .hero {
-    //background: linear-gradient(to right, $theme-color2, $theme-color1);
     background: {
         image: url('../images/header_background2.jpg');
         repeat: no-repeat;
@@ -52,6 +55,7 @@ body {
                 text-decoration: none;
                 text-transform: uppercase;
                 text-shadow: $shadow-text;
+                position: fixed;
             }
             
         } 
@@ -65,15 +69,15 @@ body {
             margin-right: em(50);
 
             li {
-                font-size: $p-size; //SET
+                font-size: $p-size; 
                 width: 22%;
-                height: em(50,16); //SET
+                height: em(50,16); 
                 @include flex-center;
                 text-align: center;
 
                 a {
                     transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-                    @include li-clickable($line-height: em(50,18)); //SET
+                    @include li-clickable($line-height: em(50,18)); 
                     @include btn-default;
                 }
             }
@@ -93,6 +97,7 @@ body {
 
         .hero-headline {
             text-align: center;
+            @include scale-from-nowhere;
 
             h1 {
                 font-size: $h1-size; //SET to 90px
@@ -108,7 +113,7 @@ body {
             }
 
             p {
-                font-size: $h3-size; //SET to 35px
+                font-size: em(35);
                 text-shadow: $shadow-text;
             }
         }
@@ -121,59 +126,116 @@ body {
 .section-about {
     padding: $sections-padding;
     color: $ternary-color;
-    background-color: #EDE9E8;
-    height: 90vh;
+    background-image: radial-gradient(circle, #ffffff, #e1e1e1, #c3c3c3, #a6a6a6, #8a8a8a, #767676, #626262, #4f4f4f, #3f3f3f, #2f2f2f, #202020, #111111);
+    height: em(900,16);
 
     i {
         @include h2-section-icons;
+        text-shadow: em(1) em(1) $shadow-color;
     }
 
     h2 {
         @include h2-sections;
+        color: $primary-color;
+        text-shadow: em(1) em(1) $shadow-color;
+    }
+
+    h3 {
+        @include h3-sections;
     }
 
     .about-container {
         @include section-container;
         @include flex-center;
+        justify-content: space-between;
+        gap: 5%;
+        position: relative;
+        height: 100%;
 
-        .about-left, .about-right {
-            width: 50%;
+        .separate {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0)
         }
 
-        .about-left {
-            h3 {
-                font-size: $h3-size; //SET
-                display: inline-block;
-                margin-bottom: em(5,25);
-            }
+        .middle, .right, .left {
+            width: 33%;
+            height: 70%;
+            position: relative;
 
-            p {
-                font-size: $p-size; //SET
-                margin-bottom: em(20,16);
+            .box-wrapper {
+                font-size: em(17);
+                width: 90%;
+                height: 100%;
+                border-radius: em(10);
+                color: $primary-color;
+                padding: em(20);
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                line-height: 1.2;
+                text-align: center;
+                @include rounded(em(20));
+                box-shadow: em(4) em(4) em(10) $shadow-color;
+                &::before {
+                    content: ' ';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #000;
+                    opacity: 0.8;
+                    @include rounded(em(20));
+                    box-shadow: em(4) em(4) em(10) $shadow-color;
+                    
+                }
+                & > * {
+                    position: relative;
+                }
+
+                i {
+                    font-size: em(30); //SET
+                    margin: 0 auto em(5);
+                    &.wave {
+                        transform: rotate(30deg);
+                    }
+                }
+
+                h3 {
+                    text-transform: none;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $secondary-color;
+                }
             }
         }
 
-        .about-right {
+       
+
+        .middle {
+            @include flex-center;
             .img-wrapper {
-                width: 80%;
-                height: 60vh;
+                width: 100%;
                 margin: 0 auto;
                 @include flex-center;
             }
 
             img {
                 display: block;
-                width: 80%;
+                width: 100%;
                 border-radius: 50%;
                 box-shadow: em(4) em(4) em(10) $shadow-color;
-                transition-property: width;
-                transition-duration: 1s;
-                &:hover {
-                    width: 90%;
-                }
-                
+                @include scale-from-nowhere;
             }
         }
+
     }
 }
 
@@ -184,6 +246,7 @@ body {
     padding: $sections-padding;
     color: $primary-color;
     background-color: $ternary-color;
+    height: 100vh;
 
     i {
         @include h2-section-icons;
@@ -335,30 +398,42 @@ body {
     padding: $sections-padding;
     color: $primary-color;
     background-color: lighten($ternary-color, 10%);
-
+    background-image: url('../images/ecommerce_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    &::before {
+        @include background-fog;
+        opacity: 0.95;
+        background-color: #000;
+    }
 
     .study-container {
         @include section-container;
+        z-index: 10;
     }
 
     h2 {
         @include h2-sections;
+        @include get-from-fog;
     }
 
     .h2-icon {
         display: block;
         margin: em(30) auto em(20);
+        @include get-from-fog;
     }
 
     h3 {
         @include h3-sections;
         font-size: $h3-size;
+        @include get-from-fog;
     }
 
     .study-ecommerce {
         @include flex-center;
         padding-bottom: em(60);
-        height: 60vh;
+        height: 40vh;
         gap: em(30);
 
         .ecommerce-left, .ecommerce-right {
@@ -367,16 +442,16 @@ body {
 
         .ecommerce-left {
             p {
-               
                 text-align: center;
                 margin-right: 10px;
+                @include get-from-fog;
             }
         }
         
         .ecommerce-right {
             img {
                 display: block;
-                width: 90%;
+                width: 70%;
                 padding: 6px;
                 @include rounded(50%);
                 border: 5px solid $secondary-color;
@@ -388,8 +463,26 @@ body {
                 @include roll-and-slide;
 
                 &:hover {
-                    width: 100%
+                    width: 80%
                 }
+            }
+        }
+    }
+
+    .study-marketing {
+        @include flex-center;
+        padding-bottom: em(60);
+        height: 40vh;
+        gap: em(30);
+        .marketing-left, .marketing-right {
+            width: 35%;
+            @include get-from-fog;
+        }
+
+
+        .marketing-left {
+            img {
+                width: 60%;
             }
         }
     }

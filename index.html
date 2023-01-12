@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JaCode</title>
     <script src="https://kit.fontawesome.com/bf99e7de58.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -14,7 +17,7 @@
     <header class="hero" id="hero">
         <nav>
             <div class="navbar-logo">
-                <a href="#hero"><span>Jacode</span></a>
+                <a href="#hero"><i class="fa-solid fa-bars"></i></a>
             </div>
             <ul class="navbar-menu">
                 <li>
@@ -86,7 +89,6 @@
         <i class="fa-solid fa-laptop-code"></i>
         <h2>Čo sa učím</h2>
         <div class="study-container">
-            <div class="study-part1">
                 <div class="study-left">
                     <div class="outline">
                         <div class="img-wrapper">
@@ -104,9 +106,9 @@
                 </div>
                 <div class="study-right">
                     <h3>Frontend</h3>
-                    <p>Tak ako väčšina začínajúcich programátorov aj ja som začal s tvorbou webov. Najskôr s jazykmi HTML a CSS. Neskôr som sa dostal k programovaciemu jazyku Javascript, ktorý je mojou srdcovkou. Postupne som sa dozvedel o ďalších technológiách ako SASS, Bootstrap, JQuery, Typescript, React, Angular a iné. Tie samozrejme neovládam všetky, avšak niektorým z nich sa ešte určite pozriem pod zúbok. 😉</p>
+                    <p>Tak ako väčšina začínajúcich programátorov aj <strong>ja som začal s tvorbou webov</strong>. Najskôr s jazykmi <strong>HTML</strong> a <strong>CSS</strong>. Neskôr som sa dostal k programovaciemu jazyku <strong>Javascript</strong>, ktorý je mojou srdcovkou. Postupne som sa dozvedel o ďalších technológiách ako SASS, Bootstrap, JQuery, Typescript, React, Angular a iné. Tie samozrejme neovládam všetky, avšak niektorým z nich sa ešte určite pozriem pod zúbok. &#128521;</p>
                     <h3>Backend</h3>
-                    <p>Ako išiel čas, došlo aj na Backend. Frontend technológie ma zatiaľ bavia viac, avšak nechcem zostať iba pri tom. Vybral som si jazyk Python. Konkrétne som sa rozhodol pre platený kurz Pythonu od <a href="https://sdacademy.sk/" target="_blank">Software Development Academy</a>. Aktuálne som v záverečnej fáze, kedy ma čaká už len vypracovanie finálneho projektu a koncom januára 2023 budem na konci tohto 8 mesačného kurzu.</p>
+                    <p>Ako išiel čas, došlo aj na Backend. Frontend technológie ma zatiaľ bavia viac, avšak nechcem zostať iba pri tom. <strong>Vybral som si jazyk Python.</strong> Konkrétne som sa rozhodol pre platený kurz Pythonu od <a href="https://sdacademy.sk/" target="_blank">Software Development Academy</a>. Aktuálne som v záverečnej fáze, kedy ma čaká už len vypracovanie finálneho projektu a koncom januára 2023 budem <strong>na konci tohto 8 mesačného kurzu.</strong></p>
                     <p>Kurz je v celku komplexný a okrem samotných základov jazyku Python záhŕňa mnoho iných poznatkov ako napríklad:</p>
                     <ul>
                         <li>Python Basics</li>
@@ -119,9 +121,93 @@
                         <li>Django</li>
                     </ul>
                 </div>
+        </div>
+    </section>
+    <section class="section-courses">
+        <div class="courses-container">
+            <h2>Moje obľúbené kurzy</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <div class="img-wrapper">
+                        <img src="./images/freecodecamp.jpg" alt="freecodecamp logo">
+                    </div>
+                    <div class="course-info">
+                        <h3>
+                            freeCodeCamp
+                        </h3>
+                        <div class="logos">
+                            <img src="./images/svg_icons/html5.svg" alt="html logo">
+                            <img src="./images/svg_icons/css3.svg" alt="css logo">
+                            <img src="./images/svg_icons/javascript.svg" alt="javascript logo">
+                            <img src="./images/svg_icons/python.svg" alt="python logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-wrapper">
+                        <img src="./images/hsb.jpg" alt="hsb logo">
+                    </div>
+                    <div class="course-info">
+                        <h3>
+                            Hackni svou<br>budoucnost
+                        </h3>
+                        <div class="logos">
+                            <img src="./images/svg_icons/html5.svg" alt="html logo">
+                            <img src="./images/svg_icons/css3.svg" alt="css logo">
+                            <img src="./images/svg_icons/sass.svg" alt="sass logo">
+                            <img src="./images/svg_icons/javascript.svg" alt="javascript logo">
+                            <img src="./images/svg_icons/python.svg" alt="python logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-wrapper">
+                        <img src="./images/webrebel.png" alt="webrebel logo">
+                    </div>
+                    <div class="course-info">
+                        <h3>
+                            Webrebel
+                        </h3>
+                        <div class="logos">
+                            <img src="./images/svg_icons/html5.svg" alt="html logo">
+                            <img src="./images/svg_icons/css3.svg" alt="css logo">
+                            <img src="./images/svg_icons/sass.svg" alt="sass logo">
+                            <img src="./images/svg_icons/javascript.svg" alt="javascript logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-wrapper">
+                        <img src="./images/frontendmasters.png" alt="frontendmasters logo">
+                    </div>
+                    <div class="course-info">
+                        <h3>
+                            Frontend Masters
+                        </h3>
+                        <div class="logos">
+                            <img src="./images/svg_icons/html5.svg" alt="html logo">
+                            <img src="./images/svg_icons/css3.svg" alt="css logo">
+                            <img src="./images/svg_icons/javascript.svg" alt="javascript logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-wrapper">
+                        <img src="./images/sda.png" alt="sda logo">
+                    </div>
+                    <div class="course-info">
+                        <h3>
+                            Software Development<br>Academy
+                        </h3>
+                        <div class="logos">
+                            <img src="./images/svg_icons/python.svg" alt="python logo">
+                            <img src="./images/svg_icons/django.svg" alt="django logo">
+                            <img src="./images/svg_icons/mysql.svg" class="mysql" alt="mysql logo">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
     </section>
     <section class="section-study2">
         <img class="h2-icon" src="./images/svg_icons/barrel.svg" alt="barrel icon">
@@ -130,7 +216,7 @@
             <div class="study-ecommerce">
                 <div class="ecommerce-left">
                     <h3>Ecommerce</h3>
-                    <p>V rokoch 2020 a 2021 som pracoval na vlastnom Ecommerce projekte a cez eshop som predával svoje produkty. Konkrétne išlo o mnou vymyslené spoločenské hry s názvom <span class="strong">Beer Challenge</span>. Samotný eshop som si zakladal cez CMS systém <span class="strong">Wordpress</span>. Práve vďaka tomu som sa s ním naučil pracovať. So samotným projektom som bol úspešný, avšak rozhodol som sa projekt na nejaký čas pozastaviť, pričom dôvodom bolo práve to, že som sa čoraz viac dozvedal o programovaní a chcel som sa tomu začať naplno venovať.</p>
+                    <p>V rokoch 2020 a 2021 som pracoval na <strong>vlastnom Ecommerce projekte a cez eshop</strong> som predával svoje produkty. Konkrétne išlo o mnou vymyslené spoločenské hry s názvom <a href="https://www.instagram.com/beer_challenge/" target="_blank">Beer Challenge</a>. Samotný eshop som si zakladal cez CMS systém <strong>Wordpress</strong>. Práve vďaka tomu som sa s ním naučil pracovať. So samotným projektom som bol úspešný, avšak rozhodol som sa projekt na nejaký čas pozastaviť, pričom dôvodom bolo práve to, že <strong>som sa čoraz viac dozvedal o programovaní a chcel som sa tomu začať naplno venovať</strong>.</p>
                 </div>
                 <div class="ecommerce-right">
                     <img src="./images/beerchallenge4.png" alt="beer challenge games">
@@ -142,7 +228,7 @@
                 </div>
                 <div class="marketing-right">
                     <h3>Digitálny marketing</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, repellat! Nihil modi expedita ipsa ducimus delectus non maiores recusandae voluptatum, sit blanditiis, tenetur officia provident saepe, porro a quos iure! Cupiditate enim debitis ipsa quaerat possimus! Dignissimos, quos? Possimus blanditiis dolor autem perspiciatis? Vel sint quasi, facilis asperiores mollitia, impedit minima placeat ab nisi magni eligendi et accusamus illum? Veniam.</p>
+                    <p>V začiatkoch môjho eshopu som digitálny marketing prenechával rôznym reklamným agentúram. S výsledkami som však nebol nikdy spokojný, takže som sa rozhodol skúsiť propagovať svoj eshop sám. <strong>Rôznymi online kurzami som sa v digitálnom marketingu zlepšoval</strong> a začal dosahovať dobré výsledky. Netvrdím o sebe, že som marketingový špecialista, ale <strong>online marketingu určite čo to rozumiem</strong>. &#128521;</p>
                 </div> 
             </div>
         </div>

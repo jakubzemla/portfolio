@@ -79,8 +79,27 @@
     animation-fill-mode: forwards;
 }
 
+@mixin rotate-shake {
+    animation-name: rotate-shake;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
+}
+
+@mixin rotate-hand {
+    animation-name: rotate-hand;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 20;
+}
+
 
 // SECTIONS
+@mixin section-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 @mixin h2-sections {
     font-size: $h2-size;
     text-transform: uppercase;
@@ -99,16 +118,15 @@
 @mixin h3-sections {
     font: {
         size: $h3-size;
-        // style: italic;
     }
     text-transform: uppercase;
-    margin-top: em(30, 25);
     border-bottom: 2px solid $secondary-color;
-    margin: 0 auto em(12);
+    margin: 0 auto em(8);
     width: fit-content;
 }
 
-@mixin section-container {
-    width: 80%;
-    margin: 0 auto;
+@mixin p-sections {
+    font: {
+        size: $p-size;
+    }
 }

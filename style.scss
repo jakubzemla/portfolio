@@ -3,7 +3,7 @@
 @import "./partials/mixins";
 @import "./partials/animations";
 
-* {
+*, *:before, *:after {
     box-sizing: border-box;
 }
 
@@ -18,8 +18,17 @@ body {
     }
 }
 
-.strong {
-    font-weight: bold;
+strong {
+    color: $secondary-color;
+}
+
+p {
+    @include p-sections;
+    line-height: 1.4;
+}
+
+a {
+    color: $secondary-color;
 }
 
 
@@ -34,7 +43,7 @@ body {
     padding-top: em(150);
     height: 100vh;
 
-    nav {
+    nav { 
         width: 100%;
         height: em(80);
         position: absolute;
@@ -44,18 +53,20 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background-color: transparent; //materialize.min.css rewrited
+        box-shadow: none; //materialize.min.css rewrited
 
         .navbar-logo {        
             a {
-                color: $primary-color;
+                color: $secondary-color;
                 font: {
-                    size: em(25);
+                    size: em(40);
                 }
-                margin-left: em(50);
-                text-decoration: none;
-                text-transform: uppercase;
-                text-shadow: $shadow-text;
+                margin-left: em(20);
+                top: em(10);
+                text-shadow: em(1) em(1) #000;
                 position: fixed;
+                z-index: 10;
             }
             
         } 
@@ -113,11 +124,11 @@ body {
             }
 
             p {
-                font-size: em(35);
+                font-size: em(35); 
                 text-shadow: $shadow-text;
             }
         }
-    }
+    } 
 }
 
 
@@ -165,7 +176,6 @@ body {
             position: relative;
 
             .box-wrapper {
-                font-size: em(17);
                 width: 90%;
                 height: 100%;
                 border-radius: em(10);
@@ -176,7 +186,6 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                line-height: 1.2;
                 text-align: center;
                 @include rounded(em(20));
                 box-shadow: em(4) em(4) em(10) $shadow-color;
@@ -199,10 +208,10 @@ body {
                 }
 
                 i {
-                    font-size: em(30); //SET
-                    margin: 0 auto em(5);
+                    font-size: em(30);
+                    margin: em(5) auto em(3);
                     &.wave {
-                        transform: rotate(30deg);
+                        @include rotate-hand;
                     }
                 }
 
@@ -210,9 +219,8 @@ body {
                     text-transform: none;
                 }
 
-                a {
-                    text-decoration: none;
-                    color: $secondary-color;
+                p {
+                    text-align: center;
                 }
             }
         }
@@ -246,146 +254,220 @@ body {
     padding: $sections-padding;
     color: $primary-color;
     background-color: $ternary-color;
-    height: 100vh;
 
     i {
         @include h2-section-icons;
+        text-shadow: em(1) em(1) #000;
     }
     
     h2 {
         @include h2-sections;
+        text-shadow: em(1) em(1) #000;
     }
+
+    
 
     .study-container {
         @include section-container;
+        @include flex-center;
+        gap: em(30);
+        .study-left, .study-right {
+            width: 50%;
+        }
 
-        .study-part1 {
-            @include flex-center;
-            padding-bottom: em(60);
-            gap: em(30);
+        .study-left {
+            .outline {
+                margin: 0 auto;
+                width: em(350);
+                height: em(350);
+                border: 2px solid $secondary-color;
+                position: relative;
+                animation-name: rotate-outline;
+                @include rounded(50%);
+                @include flex-center;
+                @include infinity-rotate;
 
-            .study-left, .study-right {
-                width: 50%;
-            }
-
-            .study-left {
-                .outline {
-                    margin: 0 auto;
-                    width: em(350);
-                    height: em(350);
+                .img-wrapper {
+                    width: 65%;
+                    height: 65%;
+                    background-color: transparent;
                     border: 2px solid $secondary-color;
-                    position: relative;
-                    animation-name: rotate-outline;
+                    overflow: hidden;
+                    animation-name: stop-rotate;
                     @include rounded(50%);
                     @include flex-center;
                     @include infinity-rotate;
-
-                    .img-wrapper {
-                        width: 65%;
-                        height: 65%;
-                        background-color: $secondary-color;
+                    
+                    img {
+                        width: 70%;
                         overflow: hidden;
-                        animation-name: stop-rotate;
-                        @include rounded(50%);
-                        @include flex-center;
-                        @include infinity-rotate;
-                        
-                        img {
-                            width: 70%;
-                            overflow: hidden;
-                        }
+                    }
+                }
+
+                .outline-logo {
+                    width: em(50);
+                    height: em(50);
+                    background-color: #fff;
+                    position: absolute;
+                    text-decoration: none;
+                    animation-name: stop-rotate;
+                    @include flex-center;
+                    @include rounded(50%);
+                    @include infinity-rotate;
+                    border: 1px solid $primary-color;
+                    transition-duration: .5s;
+                    img {
+                        width: 60%;
                     }
 
-                    .outline-logo {
-                        width: em(50);
-                        height: em(50);
-                        background-color: #fff;
-                        position: absolute;
-                        text-decoration: none;
-                        animation-name: stop-rotate;
-                        transition-duration: 0.5s;
-                        @include flex-center;
-                        @include rounded(50%);
-                        @include infinity-rotate;
-                        border: 1px solid $primary-color;
-                        img {
-                            width: 60%;
-                        }
-
-                        &:hover {
-                            width: em(70);
-                            height: em(70);                       
-                        }
+                    &:hover {
+                        width: em(70);
+                        height: em(70);                       
                     }
+                }
 
-                    .logo-1 {
-                        left: center;
-                        top: em(-25);
-                    }
+                .logo-1 {
+                    left: center;
+                    top: em(-25);
+                }
 
-                    .logo-2 {
-                        right: em(25);
-                        top: em(25);
-                    }
+                .logo-2 {
+                    right: em(25);
+                    top: em(25);
+                }
 
-                    .logo-3 {
-                        right: em(-25);
-                        top: center;
-                    }
+                .logo-3 {
+                    right: em(-25);
+                    top: center;
+                }
 
-                    .logo-4 {
-                        right: em(25);
-                        bottom: em(25);
-                    }
+                .logo-4 {
+                    right: em(25);
+                    bottom: em(25);
+                }
 
-                    .logo-5 {
-                        right: center;
-                        bottom: em(-25);
-                    }
+                .logo-5 {
+                    right: center;
+                    bottom: em(-25);
+                }
 
-                    .logo-6 {
-                        left: em(25);
-                        bottom: em(25);
-                    }
+                .logo-6 {
+                    left: em(25);
+                    bottom: em(25);
+                }
 
-                    .logo-7 {
-                        left: em(-25);
-                        bottom: center;
-                    }
+                .logo-7 {
+                    left: em(-25);
+                    bottom: center;
+                }
 
-                    .logo-8 {
-                        left: em(25);
-                        top: em(25);
-                    }
+                .logo-8 {
+                    left: em(25);
+                    top: em(25);
                 }
             }
+        }
 
-            .study-right {
-                h3 {
-                    @include h3-sections;
+        .study-right {
+            h3 {
+                @include h3-sections;
 
-                    &:last-of-type {
-                        margin-top: em(24);
-                    }
-                  }
-
-                a {
-                    text-decoration: none;
-                    color: $secondary-color;
-                    text-transform: uppercase;
+                &:last-of-type {
+                    margin-top: em(24);
                 }
+                }
+            p {
+                padding-bottom: em(5);
+                text-align: justify;
+            }
 
-                ul {
-                    margin-top: em(8);
-                    padding-left: em(60);
-                    li {
-                        &::before {
-                            content: "\2022"; 
-                            font-size: em(25);
-                            color: $secondary-color;
-                            display: inline-block; 
-                            width: 1em;
-                            margin-left: -1em}
+            a {
+                color: $secondary-color;
+            }
+
+            ul {
+                margin-top: em(8);
+                padding-left: em(60);
+                li {
+                    &::before {
+                        content: "\2022"; 
+                        font-size: em(25);
+                        color: $secondary-color;
+                        display: inline-block; 
+                        width: 1em;
+                        margin-left: -1em}
+                }
+            }
+        }
+    }
+}
+
+
+
+// ========= SECTION COURSES ========== //
+.section-courses {
+    background-image: linear-gradient(to bottom, #111111, #101012, #0f0f13, #0e0e14, #0c0d15, #0c0b14, #0b0912, #0b0711, #0b050c, #090307, #050103, #000000);
+    padding: $sections-padding;
+
+    h2 {
+        @include h2-sections;
+        text-shadow: em(1) em(1) #000;
+    }
+    
+    .courses-container {
+        width: 90%;
+        margin: 0 auto;
+        height: 60vh;
+        .carousel {
+            height: em(800,16);
+            width: 90%;
+            margin: 0 auto;
+            perspective: em(250);
+            transform: translateY(em(-300));
+            .carousel-item {
+                cursor: grab;
+                width: em(400);
+                &:active {
+                    cursor: grabbing;
+                }
+    
+                .img-wrapper {
+                    width: 80%;
+                    border-radius: 50%;
+                    border: 2px solid $primary-color;
+                    margin: 0 auto;
+                    overflow:hidden;
+                    padding: em(4);
+                    img {
+                        display: block;
+                        width: 100%;
+                        border-radius: 50%;
+                        border: 3px solid $secondary-color;
+                    }
+                }
+    
+                .course-info {
+                    h3 {
+                        color: $primary-color;
+                        font-size: em(30);
+                        font-weight: bold;
+                        padding: em(10) em(5);
+                        text-align: center;
+                    }
+    
+                    .logos {
+                        display: flex;
+                        justify-content: center;
+                        gap: 2%;
+                        img {
+                            display: block;
+                            width: em(50);
+                            height: em(50);
+                            &.mysql {
+                                background-color: #fff;
+                                padding: 0 em(5);
+                            }
+                        }
                     }
                 }
             }
@@ -393,41 +475,48 @@ body {
     }
 }
 
+
+
+
+
 // ========= SECTION STUDY2 ========== //
 .section-study2 {
     padding: $sections-padding;
     color: $primary-color;
-    background-color: lighten($ternary-color, 10%);
     background-image: url('../images/ecommerce_bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     &::before {
         @include background-fog;
-        opacity: 0.95;
+        opacity: 0.9;
         background-color: #000;
+    }
+    & > * {
+        position: relative;
     }
 
     .study-container {
         @include section-container;
-        z-index: 10;
     }
 
     h2 {
         @include h2-sections;
-        @include get-from-fog;
+        text-shadow: em(1.5) em(1.5) #000;
     }
 
     .h2-icon {
         display: block;
         margin: em(30) auto em(20);
-        @include get-from-fog;
     }
 
     h3 {
         @include h3-sections;
         font-size: $h3-size;
-        @include get-from-fog;
+    }
+
+    p {
+        text-align: center;
     }
 
     .study-ecommerce {
@@ -442,13 +531,15 @@ body {
 
         .ecommerce-left {
             p {
-                text-align: center;
                 margin-right: 10px;
-                @include get-from-fog;
             }
         }
         
         .ecommerce-right {
+            transition: all 0.5s ease-in-out;
+            &:hover {
+                transform: scale(1.15) translate(5%);
+            }
             img {
                 display: block;
                 width: 70%;
@@ -456,15 +547,9 @@ body {
                 @include rounded(50%);
                 border: 5px solid $secondary-color;
                 box-shadow: em(6) em(6) em(15) $shadow-color;
-                transition-property: width;
-                transition-duration: 1s;
                 position: relative;
                 right: -1500px;
                 @include roll-and-slide;
-
-                &:hover {
-                    width: 80%
-                }
             }
         }
     }
@@ -474,15 +559,22 @@ body {
         padding-bottom: em(60);
         height: 40vh;
         gap: em(30);
+
         .marketing-left, .marketing-right {
             width: 35%;
-            @include get-from-fog;
         }
 
 
         .marketing-left {
+            display: flex;
+            justify-content: flex-end;
             img {
+                display: block;
                 width: 60%;
+                // transition: transform .01s;
+                &:hover {
+                    @include rotate-shake;
+                }
             }
         }
     }

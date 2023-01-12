@@ -56,7 +56,7 @@ a {
         background-color: transparent; //materialize.min.css rewrited
         box-shadow: none; //materialize.min.css rewrited
 
-        .navbar-logo {        
+        .navbar-logo {      
             a {
                 color: $secondary-color;
                 font: {
@@ -251,7 +251,9 @@ a {
 
 // ========= SECTION STUDY ========== //
 .section-study {
-    padding: $sections-padding;
+    padding-top: em(100);
+    padding-bottom: 0;
+
     color: $primary-color;
     background-color: $ternary-color;
 
@@ -383,6 +385,7 @@ a {
 
             a {
                 color: $secondary-color;
+                text-decoration: underline;
             }
 
             ul {
@@ -404,10 +407,13 @@ a {
 
 
 
+
+
 // ========= SECTION COURSES ========== //
 .section-courses {
     background-image: linear-gradient(to bottom, #111111, #101012, #0f0f13, #0e0e14, #0c0d15, #0c0b14, #0b0912, #0b0711, #0b050c, #090307, #050103, #000000);
-    padding: $sections-padding;
+    padding-top: em(50);
+    height: 90vh;
 
     h2 {
         @include h2-sections;
@@ -418,17 +424,22 @@ a {
         width: 90%;
         margin: 0 auto;
         height: 60vh;
+
+        h2 {
+            margin-top: em(30);
+            margin-bottom: em(30);
+        }
         .carousel {
-            height: em(800,16);
+            height: em(1000,16);
             width: 90%;
             margin: 0 auto;
             perspective: em(250);
-            transform: translateY(em(-300));
+            transform: translateY(em(-400));
             .carousel-item {
-                cursor: grab;
                 width: em(400);
+                cursor: url('../images/svg_icons/hand-solid.svg'), grab;
                 &:active {
-                    cursor: grabbing;
+                    cursor: url('../images/svg_icons/hand-back-fist-solid.svg'), grabbing;
                 }
     
                 .img-wrapper {
@@ -447,12 +458,30 @@ a {
                 }
     
                 .course-info {
+                    text-align: center;
+                    a {
+                        color: $primary-color;
+                        text-decoration: none;
+                    }
                     h3 {
                         color: $primary-color;
                         font-size: em(30);
                         font-weight: bold;
                         padding: em(10) em(5);
                         text-align: center;
+                    }
+
+                    .visit-btn {
+                        background-color: #111;
+                        border: 2px solid $primary-color;
+                        width: 60%;
+                        padding: em(10);
+                        margin: em(10) auto em(10);
+                        cursor: pointer;
+                        font: {
+                            size: em(20);
+                            font-weight: bold;
+                        }
                     }
     
                     .logos {
@@ -571,7 +600,6 @@ a {
             img {
                 display: block;
                 width: 60%;
-                // transition: transform .01s;
                 &:hover {
                     @include rotate-shake;
                 }
@@ -579,3 +607,98 @@ a {
         }
     }
 }
+
+
+
+
+
+// ========= SECTION MY-CODES ========== //
+section.my-codes {
+    padding: em(100) 0 em(100);
+    background-color: #333;
+    padding-top: em(50);
+
+    h2 {
+        @include h2-sections;
+        text-shadow: em(1) em(1) #000;
+    }
+
+    i {
+        @include h2-section-icons;
+        text-shadow: em(1) em(1) #000;
+    }
+
+    .codes-container {
+        width: 90%;
+        margin: 0 auto;
+        
+        .code-frame {
+            width: 50%;
+            margin: 0 auto;
+            height: em(600);
+            border: 2px solid #24A7EB;
+            @include rounded(3%);
+            padding: em(20);
+            background: $ternary-color;
+            font-family: monospace;
+
+            p {
+                width: max-content;
+                font: {
+                    size: em(25);
+                    weight: bold;
+                    family: monospace;
+                }
+                position: relative;
+            }
+
+            p::before, p::after {
+                content: '';
+                color: $ternary-color;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+
+            // LINE1
+            .line1 {
+                font-size: em(40);
+            }
+            .line1::before {
+                background: $ternary-color;
+                animation: typewriter 1.125s 3s steps(15) forwards,
+            }
+            .line1::after {
+                width: 0.125em;
+                background: transparent;
+                animation:
+                    blinker 0.75s 4 forwards, //3s
+                    typewriter 1.125s 3s steps(15) forwards, //4.125s
+                    blinker-away 0.2s 4.125s forwards; //4.325s
+            }
+
+            //LINE2
+            .line2::before {
+                background: $ternary-color;
+                animation: typewriter 4.2s 5.825s steps(56) forwards;
+            }
+            .line2::after {
+                width: 0.125em;
+                background: transparent;
+                animation: 
+                    blinker 0.75s 4.325s 2 forwards, //5.825s
+                    typewriter 4.2s 5.825s steps(56) forwards, //10.025
+                    blinker-away 0.2s 10.025s forwards; //10.225
+            }
+
+            .last-line {
+                width: 0.125em;
+                color: $ternary-color;
+                animation: blinker 0.75s 10.025s infinite;
+            }
+        }
+    }
+}
+

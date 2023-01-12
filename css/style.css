@@ -184,6 +184,36 @@
     transform: rotate(30deg);
   }
 }
+@-webkit-keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@-webkit-keyframes blinker {
+  to {
+    background: #fff;
+  }
+}
+@keyframes blinker {
+  to {
+    background: #fff;
+  }
+}
+@-webkit-keyframes blinker-away {
+  to {
+    width: 0em;
+  }
+}
+@keyframes blinker-away {
+  to {
+    width: 0em;
+  }
+}
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -315,7 +345,7 @@ a {
 }
 
 .section-about {
-  padding: 6.25em 0 3.125em;
+  padding: 6.25em 0 6.25em;
   color: #111;
   background-image: radial-gradient(circle, #ffffff, #e1e1e1, #c3c3c3, #a6a6a6, #8a8a8a, #767676, #626262, #4f4f4f, #3f3f3f, #2f2f2f, #202020, #111111);
   height: 56.25em;
@@ -446,7 +476,8 @@ a {
 }
 
 .section-study {
-  padding: 6.25em 0 3.125em;
+  padding-top: 6.25em;
+  padding-bottom: 0;
   color: #fff;
   background-color: #111;
 }
@@ -596,6 +627,7 @@ a {
 }
 .section-study .study-container .study-right a {
   color: #FFAF00;
+  text-decoration: underline;
 }
 .section-study .study-container .study-right ul {
   margin-top: 0.5em;
@@ -612,7 +644,8 @@ a {
 
 .section-courses {
   background-image: linear-gradient(to bottom, #111111, #101012, #0f0f13, #0e0e14, #0c0d15, #0c0b14, #0b0912, #0b0711, #0b050c, #090307, #050103, #000000);
-  padding: 6.25em 0 3.125em;
+  padding-top: 3.125em;
+  height: 90vh;
 }
 .section-courses h2 {
   font-size: 2.1875em;
@@ -626,21 +659,25 @@ a {
   margin: 0 auto;
   height: 60vh;
 }
+.section-courses .courses-container h2 {
+  margin-top: 1.875em;
+  margin-bottom: 1.875em;
+}
 .section-courses .courses-container .carousel {
-  height: 50em;
+  height: 62.5em;
   width: 90%;
   margin: 0 auto;
   perspective: 15.625em;
-  transform: translateY(-18.75em);
+  transform: translateY(-25em);
 }
 .section-courses .courses-container .carousel .carousel-item {
-  cursor: -webkit-grab;
-  cursor: grab;
   width: 25em;
+  cursor: url("../images/svg_icons/hand-solid.svg"), -webkit-grab;
+  cursor: url("../images/svg_icons/hand-solid.svg"), grab;
 }
 .section-courses .courses-container .carousel .carousel-item:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
+  cursor: url("../images/svg_icons/hand-back-fist-solid.svg"), -webkit-grabbing;
+  cursor: url("../images/svg_icons/hand-back-fist-solid.svg"), grabbing;
 }
 .section-courses .courses-container .carousel .carousel-item .img-wrapper {
   width: 80%;
@@ -656,12 +693,29 @@ a {
   border-radius: 50%;
   border: 3px solid #FFAF00;
 }
+.section-courses .courses-container .carousel .carousel-item .course-info {
+  text-align: center;
+}
+.section-courses .courses-container .carousel .carousel-item .course-info a {
+  color: #fff;
+  text-decoration: none;
+}
 .section-courses .courses-container .carousel .carousel-item .course-info h3 {
   color: #fff;
   font-size: 1.875em;
   font-weight: bold;
   padding: 0.625em 0.3125em;
   text-align: center;
+}
+.section-courses .courses-container .carousel .carousel-item .course-info .visit-btn {
+  background-color: #111;
+  border: 2px solid #fff;
+  width: 60%;
+  padding: 0.625em;
+  margin: 0.625em auto 0.625em;
+  cursor: pointer;
+  font-size: 1.25em;
+  font-font-weight: bold;
 }
 .section-courses .courses-container .carousel .carousel-item .course-info .logos {
   display: flex;
@@ -679,7 +733,7 @@ a {
 }
 
 .section-study2 {
-  padding: 6.25em 0 3.125em;
+  padding: 6.25em 0 6.25em;
   color: #fff;
   background-image: url("../images/ecommerce_bg.jpg");
   background-repeat: no-repeat;
@@ -796,4 +850,88 @@ a {
           animation-fill-mode: forwards;
   -webkit-animation-iteration-count: 2;
           animation-iteration-count: 2;
+}
+
+section.my-codes {
+  padding: 6.25em 0 6.25em;
+  background-color: #333;
+  padding-top: 3.125em;
+}
+section.my-codes h2 {
+  font-size: 2.1875em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.7142857143em;
+  text-shadow: 0.0625em 0.0625em #000;
+}
+section.my-codes i {
+  display: block;
+  font-size: 3.125em;
+  margin: 0 auto 0.6em;
+  text-align: center;
+  color: #FFAF00;
+  text-shadow: 0.0625em 0.0625em #000;
+}
+section.my-codes .codes-container {
+  width: 90%;
+  margin: 0 auto;
+}
+section.my-codes .codes-container .code-frame {
+  width: 50%;
+  margin: 0 auto;
+  height: 37.5em;
+  border: 2px solid #24A7EB;
+  border-radius: 3%;
+  padding: 1.25em;
+  background: #111;
+  font-family: monospace;
+}
+section.my-codes .codes-container .code-frame p {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.5625em;
+  font-weight: bold;
+  font-family: monospace;
+  position: relative;
+}
+section.my-codes .codes-container .code-frame p::before, section.my-codes .codes-container .code-frame p::after {
+  content: "";
+  color: #111;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+section.my-codes .codes-container .code-frame .line1 {
+  font-size: 2.5em;
+}
+section.my-codes .codes-container .code-frame .line1::before {
+  background: #111;
+  -webkit-animation: typewriter 1.125s 3s steps(15) forwards;
+          animation: typewriter 1.125s 3s steps(15) forwards;
+}
+section.my-codes .codes-container .code-frame .line1::after {
+  width: 0.125em;
+  background: transparent;
+  -webkit-animation: blinker 0.75s 4 forwards, typewriter 1.125s 3s steps(15) forwards, blinker-away 0.2s 4.125s forwards;
+          animation: blinker 0.75s 4 forwards, typewriter 1.125s 3s steps(15) forwards, blinker-away 0.2s 4.125s forwards;
+}
+section.my-codes .codes-container .code-frame .line2::before {
+  background: #111;
+  -webkit-animation: typewriter 4.2s 5.825s steps(56) forwards;
+          animation: typewriter 4.2s 5.825s steps(56) forwards;
+}
+section.my-codes .codes-container .code-frame .line2::after {
+  width: 0.125em;
+  background: transparent;
+  -webkit-animation: blinker 0.75s 4.325s 2 forwards, typewriter 4.2s 5.825s steps(56) forwards, blinker-away 0.2s 10.025s forwards;
+          animation: blinker 0.75s 4.325s 2 forwards, typewriter 4.2s 5.825s steps(56) forwards, blinker-away 0.2s 10.025s forwards;
+}
+section.my-codes .codes-container .code-frame .last-line {
+  width: 0.125em;
+  color: #111;
+  -webkit-animation: blinker 0.75s 10.025s infinite;
+          animation: blinker 0.75s 10.025s infinite;
 }/*# sourceMappingURL=style.css.map */

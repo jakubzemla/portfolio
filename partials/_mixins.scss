@@ -1,4 +1,8 @@
 // GENERAL
+@mixin border-helper($colour: red) {
+    border: 2px solid $colour;
+}
+
 @mixin flex-center {
     display: flex;
     justify-content: center;

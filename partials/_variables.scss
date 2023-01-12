@@ -3,6 +3,8 @@ $primary-color: #fff;
 $secondary-color: #FFAF00;
 $ternary-color: #111;
 $shadow-color: #010101;
+$test-color: #eeeeee; 
+$github-color: #2A007F;
 
 //Outline logos
 $logos-color: #FF5722, #1572B6, #C76494, #EFD81D, #346FA0, $ternary-color, $ternary-color, #207196;
@@ -22,4 +24,4 @@ $shadow-text: em(4, 90) em(4, 90) em(2, 90) $shadow-color;
 
 
 // ===== OTHERS ===== //
-$sections-padding: em(100) 0 em(50);
+$sections-padding: em(100) 0 em(100);

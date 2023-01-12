@@ -98,3 +98,21 @@
         transform: rotate(30deg);
     }
 }
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blinker {
+    to {
+        background: $primary-color;
+    }
+}
+
+@keyframes blinker-away {
+    to {
+        width: 0em;
+    }
+}

@@ -3,6 +3,7 @@
 @import "./partials/mixins";
 @import "./partials/animations";
 
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -632,27 +633,48 @@ section.my-codes {
         width: 90%;
         margin: 0 auto;
         
+        // MY OWN TYPEWRITTING ANIMATIONS
         .code-frame {
-            width: 50%;
-            margin: 0 auto;
-            height: em(600);
+            width: 60%; //adjustable
+            margin: 0 auto; //center the frame
+            height: em(600); //adjustable
             border: 2px solid #24A7EB;
             @include rounded(3%);
-            padding: em(20);
+            padding: em(35);
             background: $ternary-color;
-            font-family: monospace;
+            font-family: monospace; //do not change
+            
+            span.colored { //not necessary
+                color: #518DBF;
+            }
+            em.tag-frame { //not necessary
+                color: #666666;
+            }
+            em.tag-class {
+                color: #9ACFEC;
+            }
+            em.tag-class-value {
+                color: #C78E7D;
+                a {
+                    color: inherit;
+                }
+            }
 
             p {
-                width: max-content;
+                width: max-content; //do not change
+                max-width: 100%;
+                color: $primary-color;
                 font: {
                     size: em(25);
                     weight: bold;
-                    family: monospace;
                 }
                 position: relative;
+                a {
+                    color: $primary-color;
+                }
             }
 
-            p::before, p::after {
+            p::before, p::after { // do not change
                 content: '';
                 color: $ternary-color;
                 position: absolute;
@@ -662,41 +684,31 @@ section.my-codes {
                 right: 0;
             }
 
-            // LINE1
-            .line1 {
-                font-size: em(40);
-            }
-            .line1::before {
-                background: $ternary-color;
-                animation: typewriter 1.125s 3s steps(15) forwards,
-            }
-            .line1::after {
-                width: 0.125em;
-                background: transparent;
-                animation:
-                    blinker 0.75s 4 forwards, //3s
-                    typewriter 1.125s 3s steps(15) forwards, //4.125s
-                    blinker-away 0.2s 4.125s forwards; //4.325s
-            }
-
-            //LINE2
-            .line2::before {
-                background: $ternary-color;
-                animation: typewriter 4.2s 5.825s steps(56) forwards;
-            }
-            .line2::after {
-                width: 0.125em;
-                background: transparent;
-                animation: 
-                    blinker 0.75s 4.325s 2 forwards, //5.825s
-                    typewriter 4.2s 5.825s steps(56) forwards, //10.025
-                    blinker-away 0.2s 10.025s forwards; //10.225
+            .line { //do not change
+                --add: 1.5s;
+                --start: 0s;
+                --duration: 0s;
+                --delay: 1.5s;
+                --steps: 1;
+                &::before {
+                    background: $ternary-color;
+                    animation: typewriter var(--duration) var(--delay) steps(var(--steps)) forwards;
+                }
+                &::after {
+                    width: 0.125em;
+                    background: transparent;
+                    animation:
+                        blinker 0.75s var(--start) 2 forwards,
+                        typewriter var(--duration) var(--delay) steps(var(--steps)) forwards,
+                        blinker-away 0.2s calc(var(--duration) + var(--start) + var(--add))  forwards;
+                }
             }
 
             .last-line {
+                --delay: 0s;
                 width: 0.125em;
                 color: $ternary-color;
-                animation: blinker 0.75s 10.025s infinite;
+                animation: blinker 0.75s var(--delay) 10;
             }
         }
     }

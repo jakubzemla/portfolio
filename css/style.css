@@ -877,23 +877,42 @@ section.my-codes .codes-container {
   margin: 0 auto;
 }
 section.my-codes .codes-container .code-frame {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   height: 37.5em;
   border: 2px solid #24A7EB;
   border-radius: 3%;
-  padding: 1.25em;
+  padding: 2.1875em;
   background: #111;
   font-family: monospace;
+}
+section.my-codes .codes-container .code-frame span.colored {
+  color: #518DBF;
+}
+section.my-codes .codes-container .code-frame em.tag-frame {
+  color: #666666;
+}
+section.my-codes .codes-container .code-frame em.tag-class {
+  color: #9ACFEC;
+}
+section.my-codes .codes-container .code-frame em.tag-class-value {
+  color: #C78E7D;
+}
+section.my-codes .codes-container .code-frame em.tag-class-value a {
+  color: inherit;
 }
 section.my-codes .codes-container .code-frame p {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 100%;
+  color: #fff;
   font-size: 1.5625em;
   font-weight: bold;
-  font-family: monospace;
   position: relative;
+}
+section.my-codes .codes-container .code-frame p a {
+  color: #fff;
 }
 section.my-codes .codes-container .code-frame p::before, section.my-codes .codes-container .code-frame p::after {
   content: "";
@@ -904,34 +923,28 @@ section.my-codes .codes-container .code-frame p::before, section.my-codes .codes
   bottom: 0;
   right: 0;
 }
-section.my-codes .codes-container .code-frame .line1 {
-  font-size: 2.5em;
+section.my-codes .codes-container .code-frame .line {
+  --add: 1.5s;
+  --start: 0s;
+  --duration: 0s;
+  --delay: 1.5s;
+  --steps: 1;
 }
-section.my-codes .codes-container .code-frame .line1::before {
+section.my-codes .codes-container .code-frame .line::before {
   background: #111;
-  -webkit-animation: typewriter 1.125s 3s steps(15) forwards;
-          animation: typewriter 1.125s 3s steps(15) forwards;
+  -webkit-animation: typewriter var(--duration) var(--delay) steps(var(--steps)) forwards;
+          animation: typewriter var(--duration) var(--delay) steps(var(--steps)) forwards;
 }
-section.my-codes .codes-container .code-frame .line1::after {
+section.my-codes .codes-container .code-frame .line::after {
   width: 0.125em;
   background: transparent;
-  -webkit-animation: blinker 0.75s 4 forwards, typewriter 1.125s 3s steps(15) forwards, blinker-away 0.2s 4.125s forwards;
-          animation: blinker 0.75s 4 forwards, typewriter 1.125s 3s steps(15) forwards, blinker-away 0.2s 4.125s forwards;
-}
-section.my-codes .codes-container .code-frame .line2::before {
-  background: #111;
-  -webkit-animation: typewriter 4.2s 5.825s steps(56) forwards;
-          animation: typewriter 4.2s 5.825s steps(56) forwards;
-}
-section.my-codes .codes-container .code-frame .line2::after {
-  width: 0.125em;
-  background: transparent;
-  -webkit-animation: blinker 0.75s 4.325s 2 forwards, typewriter 4.2s 5.825s steps(56) forwards, blinker-away 0.2s 10.025s forwards;
-          animation: blinker 0.75s 4.325s 2 forwards, typewriter 4.2s 5.825s steps(56) forwards, blinker-away 0.2s 10.025s forwards;
+  -webkit-animation: blinker 0.75s var(--start) 2 forwards, typewriter var(--duration) var(--delay) steps(var(--steps)) forwards, blinker-away 0.2s calc(var(--duration) + var(--start) + var(--add)) forwards;
+          animation: blinker 0.75s var(--start) 2 forwards, typewriter var(--duration) var(--delay) steps(var(--steps)) forwards, blinker-away 0.2s calc(var(--duration) + var(--start) + var(--add)) forwards;
 }
 section.my-codes .codes-container .code-frame .last-line {
+  --delay: 0s;
   width: 0.125em;
   color: #111;
-  -webkit-animation: blinker 0.75s 10.025s infinite;
-          animation: blinker 0.75s 10.025s infinite;
+  -webkit-animation: blinker 0.75s var(--delay) 10;
+          animation: blinker 0.75s var(--delay) 10;
 }/*# sourceMappingURL=style.css.map */

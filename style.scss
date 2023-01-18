@@ -1484,12 +1484,14 @@ section.my-codes {
 
 @media only screen and (max-width: 640px) {
     .hero {
+        background-position: 60% 0;
         nav {
             max-width: 100%;
             position: absolute;
             .navbar-menu {
                 li {
-                    font-size: em(15);
+                    width: 23%;
+                    font-size: em(14);
                 }
             }
             
@@ -1499,13 +1501,13 @@ section.my-codes {
         .hero-items {
             .hero-headline {
                 h1 {
-                    font-size: em(25);
-                }
-                h2 {
                     font-size: em(20);
                 }
-                p {
+                h2 {
                     font-size: em(15);
+                }
+                p {
+                    font-size: em(13);
                 }
             }
         }
@@ -1514,7 +1516,11 @@ section.my-codes {
     .section-about {
         .about-container {
             .left, .right {
-                font-size: em(14);
+                font-size: em(15,16);
+            }
+
+            .middle {
+                width: 100%;
             }
         }
     }
@@ -1523,11 +1529,12 @@ section.my-codes {
         .study-container {
             .study-left, .study-right {
                 width: 85%;
+                font-size: em(15,16);
             }
 
             .study-left {
                 .outline {
-                    right: em(20);
+                    right: em(25);
                 }
             }
 
@@ -1544,15 +1551,16 @@ section.my-codes {
             font-size: em(20);
         }
         .courses-container {
+            width: 98%;
             .carousel {
                 .carousel-item {
-                    width: 36%;
+                    width: 37%;
                     .course-info {
                         h3 {
-                            font-size: em(16);
+                            font-size: em(14,16);
                         }
                         .visit-btn {
-                            font-size: em(14);
+                            font-size: em(12);
                         }
                     }
                 }
@@ -1580,7 +1588,7 @@ section.my-codes {
             .study-ecommerce {
                 .ecommerce-left, .ecommerce-right {
                     width: 90%;
-                    font-size: em(14);
+                    font-size: em(15,16);
                 }
                 .ecommerce-right {
                     .img-wrapper {
@@ -1596,7 +1604,7 @@ section.my-codes {
             .study-marketing {
                 .marketing-left, .marketing-right {
                     width: 90%;
-                    font-size: em(14);
+                    font-size: em(15,16);
                 }
 
                 .marketing-left {
@@ -1612,6 +1620,7 @@ section.my-codes {
             width: 98%;
             .code-frame {
                 width: 100%;
+                min-height: 35vh;
                 font-size: em(6,16);
                 letter-spacing: 0px;
                 word-spacing: -2px;
@@ -1632,6 +1641,13 @@ section.my-codes {
                     a.contact-btn, p.contact-btn {
                         font-size: em(11,16);
                         width: max-content;
+                    }
+
+                    a.email {
+                        position: relative;
+                        left: em(-25);
+                        width: max-content;
+                        font-size: em(12,16);
                     }
                 }
             }

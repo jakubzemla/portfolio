@@ -1516,6 +1516,7 @@ section.contacts .contacts-container small {
 }
 @media only screen and (max-width: 640px) {
   .hero {
+    background-position: 60% 0;
     min-height: 15.625em;
     max-height: 28.125em;
   }
@@ -1524,25 +1525,30 @@ section.contacts .contacts-container small {
     position: absolute;
   }
   .hero nav .navbar-menu li {
-    font-size: 0.9375em;
+    width: 23%;
+    font-size: 0.875em;
   }
   .hero .hero-items .hero-headline h1, .hero .hero-items .hero-headline h2 {
-    font-size: 1.5625em;
-  }
-  .hero .hero-items .hero-headline h2 {
     font-size: 1.25em;
   }
-  .hero .hero-items .hero-headline p {
+  .hero .hero-items .hero-headline h2 {
     font-size: 0.9375em;
   }
+  .hero .hero-items .hero-headline p {
+    font-size: 0.8125em;
+  }
   .section-about .about-container .left, .section-about .about-container .right {
-    font-size: 0.875em;
+    font-size: 0.9375em;
+  }
+  .section-about .about-container .middle {
+    width: 100%;
   }
   .section-study .study-container .study-left, .section-study .study-container .study-right {
     width: 85%;
+    font-size: 0.9375em;
   }
   .section-study .study-container .study-left .outline {
-    right: 1.25em;
+    right: 1.5625em;
   }
   .section-study .study-container .study-right {
     font-size: 0.875em;
@@ -1554,14 +1560,17 @@ section.contacts .contacts-container small {
   .section-courses h2 {
     font-size: 1.25em;
   }
+  .section-courses .courses-container {
+    width: 98%;
+  }
   .section-courses .courses-container .carousel .carousel-item {
-    width: 36%;
+    width: 37%;
   }
   .section-courses .courses-container .carousel .carousel-item .course-info h3 {
-    font-size: 1em;
+    font-size: 0.875em;
   }
   .section-courses .courses-container .carousel .carousel-item .course-info .visit-btn {
-    font-size: 0.875em;
+    font-size: 0.75em;
   }
   .section-study2 .h2-icon {
     transform: scale(0.7);
@@ -1577,7 +1586,7 @@ section.contacts .contacts-container small {
   }
   .section-study2 .study-container .study-ecommerce .ecommerce-left, .section-study2 .study-container .study-ecommerce .ecommerce-right {
     width: 90%;
-    font-size: 0.875em;
+    font-size: 0.9375em;
   }
   .section-study2 .study-container .study-ecommerce .ecommerce-right .img-wrapper img {
     position: static;
@@ -1586,7 +1595,7 @@ section.contacts .contacts-container small {
   }
   .section-study2 .study-container .study-marketing .marketing-left, .section-study2 .study-container .study-marketing .marketing-right {
     width: 90%;
-    font-size: 0.875em;
+    font-size: 0.9375em;
   }
   .section-study2 .study-container .study-marketing .marketing-left {
     margin: 0 auto;
@@ -1599,6 +1608,7 @@ section.contacts .contacts-container small {
   }
   section.my-codes .codes-container .code-frame {
     width: 100%;
+    min-height: 35vh;
     font-size: 0.375em;
     letter-spacing: 0px;
     word-spacing: -2px;
@@ -1615,5 +1625,13 @@ section.contacts .contacts-container small {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+  }
+  section.contacts .contacts-container .container .planet a.email {
+    position: relative;
+    left: -1.5625em;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    font-size: 0.75em;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,17 +1,25 @@
 window.onload = function () {heroAnimation()}
 window.onscroll = function() {showNavigationBackground(), followElements(), codeFrameChecker()}
 
+var viewportWidth = window.innerWidth
+function resizeControl() {
+	viewportWidth = window.innerWidth
+	console.log(viewportWidth)
+}
+
 function heroAnimation() {
 	let heroHeadline = document.querySelector(".hero-headline")
 	heroHeadline.style.animation = "scale-from-nowhere 2s 1s forwards, change-opacity 2s 1s forwards"
 	heroHeadline.style.visibility = "visible"
 }
 
+
 animatedElements = [
 	aboutMiddle = {
 		element : document.querySelector(".middle img"),
 		animation: "scale-from-nowhere 2s forwards, change-width 2s forwards",
 		position: 700,
+		responsive: true,
 		positionChecker: function() {
 			return this.element.getBoundingClientRect().top
 		}
@@ -20,6 +28,7 @@ animatedElements = [
 		element : document.querySelector("i.wave"),
 		animation: "rotate-hand 0.4s 20 forwards",
 		position: 500,
+		responsive: true,
 		positionChecker: function() {
 			return this.element.getBoundingClientRect().top
 		}
@@ -28,6 +37,7 @@ animatedElements = [
 		element : document.querySelector(".ecommerce-right img"),
 		animation: "slide-left 2s forwards, roll-into 2s forwards",
 		position: 500,
+		responsive: false,
 		positionChecker: function() {
 			return this.element.getBoundingClientRect().top
 		}
@@ -36,6 +46,7 @@ animatedElements = [
 		element : document.querySelector(".marketing-left img"),
 		animation: "rotate-shake 0.2s 2 forwards",
 		position: 500,
+		responsive: true,
 		positionChecker: function() {
 			return this.element.getBoundingClientRect().top
 		}
@@ -45,7 +56,9 @@ animatedElements = [
 
 function followElements() {
 	for (elem of animatedElements) {
-		if (elem.positionChecker() < elem.position) {
+		if (elem.responsive == true && elem.positionChecker() < elem.position) {
+			elem.element.style.animation = elem.animation
+		} else if (viewportWidth > 640 && elem.positionChecker() < elem.position) {
 			elem.element.style.animation = elem.animation
 		}
 	}
@@ -97,7 +110,9 @@ typewriterEfect()
 function codeFrameChecker(){
 	let codesHeadline = document.querySelector(".codes-container")
 	let codeFrame = document.querySelector(".code-frame")
-	if (codesHeadline.getBoundingClientRect().top < 400) {
+	if (viewportWidth > 640 && codesHeadline.getBoundingClientRect().top < 400) {
+		codeFrame.style.display = "block"
+	} else if (viewportWidth <= 640) {
 		codeFrame.style.display = "block"
 	}
 }

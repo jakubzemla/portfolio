@@ -483,6 +483,7 @@ a {
   gap: 1.875em;
 }
 .section-study .study-container .study-left, .section-study .study-container .study-right {
+  margin: 0 auto;
   width: 50%;
 }
 .section-study .study-container .study-left {
@@ -784,9 +785,6 @@ a {
 .section-study2 .study-ecommerce .ecommerce-right {
   width: 45%;
 }
-.section-study2 .study-ecommerce .ecommerce-right .img-wrapper {
-  max-height: inherit;
-}
 .section-study2 .study-ecommerce .ecommerce-right .img-wrapper img {
   display: block;
   height: 25em;
@@ -797,9 +795,6 @@ a {
   position: relative;
   right: -1500px;
   transition: all 0.5s ease-in-out;
-}
-.section-study2 .study-ecommerce .ecommerce-right .img-wrapper img:hover {
-  transform: scale(1.15) translate(5%);
 }
 .section-study2 .study-marketing {
   display: flex;
@@ -1035,7 +1030,7 @@ section.contacts .contacts-container small {
   margin: 1.25em auto 0;
 }
 
-@media screen and (max-width: 1700px) {
+@media only screen and (max-width: 1700px) {
   .section-about {
     height: 50em;
   }
@@ -1046,7 +1041,7 @@ section.contacts .contacts-container small {
     width: 70%;
   }
 }
-@media screen and (max-width: 1500px) {
+@media only screen and (max-width: 1500px) {
   .section-about {
     height: 43.75em;
     padding-bottom: 0;
@@ -1073,7 +1068,7 @@ section.contacts .contacts-container small {
     width: 90%;
   }
 }
-@media screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
   .hero nav {
     height: 3.75em;
   }
@@ -1234,7 +1229,7 @@ section.contacts .contacts-container small {
     width: 7.1428571429em;
   }
 }
-@media screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .hero {
     min-height: 31.25em;
     max-height: 43.75em;
@@ -1303,6 +1298,7 @@ section.contacts .contacts-container small {
   }
   .section-study .study-container .study-left, .section-study .study-container .study-right {
     width: 70%;
+    margin: 0 auto;
   }
   .section-courses {
     min-height: 34.375em;
@@ -1362,26 +1358,19 @@ section.contacts .contacts-container small {
     font-size: 1.5625em;
   }
 }
-@media screen and (max-width: 900px) {
-  .hero {
-    background-position: 40% 0;
-  }
+@media only screen and (max-width: 900px) {
   section.my-codes .codes-container .code-frame {
     width: 100%;
   }
 }
-@media screen and (max-width: 800px) {
-  .hero {
-    background-position: 40% 0;
-  }
+@media only screen and (max-width: 800px) {
   section.my-codes .codes-container .code-frame {
     width: 100%;
     font-size: 0.75em;
   }
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .hero {
-    background-position: 30% 0;
     min-height: 23.75em;
     max-height: 31.25em;
   }
@@ -1525,11 +1514,14 @@ section.contacts .contacts-container small {
     font-size: 1.25em;
   }
 }
-@media screen and (max-width: 640px) {
+@media only screen and (max-width: 640px) {
   .hero {
-    background-position: 50% 0;
     min-height: 15.625em;
     max-height: 28.125em;
+  }
+  .hero nav {
+    max-width: 100%;
+    position: absolute;
   }
   .hero nav .navbar-menu li {
     font-size: 0.9375em;
@@ -1548,6 +1540,9 @@ section.contacts .contacts-container small {
   }
   .section-study .study-container .study-left, .section-study .study-container .study-right {
     width: 85%;
+  }
+  .section-study .study-container .study-left .outline {
+    right: 1.25em;
   }
   .section-study .study-container .study-right {
     font-size: 0.875em;
@@ -1584,9 +1579,20 @@ section.contacts .contacts-container small {
     width: 90%;
     font-size: 0.875em;
   }
+  .section-study2 .study-container .study-ecommerce .ecommerce-right .img-wrapper img {
+    position: static;
+    display: block;
+    margin: 0 auto;
+  }
   .section-study2 .study-container .study-marketing .marketing-left, .section-study2 .study-container .study-marketing .marketing-right {
     width: 90%;
     font-size: 0.875em;
+  }
+  .section-study2 .study-container .study-marketing .marketing-left {
+    margin: 0 auto;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
   section.my-codes .codes-container {
     width: 98%;

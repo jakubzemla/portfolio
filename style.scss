@@ -267,6 +267,7 @@ a {
         @include flex-center;
         gap: em(30);
         .study-left, .study-right {
+            margin: 0 auto;
             width: 50%;
         }
 
@@ -560,7 +561,6 @@ a {
         .ecommerce-right {
             width: 45%;
             .img-wrapper {
-                max-height: inherit;
                 img {
                     display: block;
                     height: em(400);
@@ -571,9 +571,6 @@ a {
                     position: relative;
                     right: -1500px;
                     transition: all 0.5s ease-in-out;
-                    &:hover {
-                        transform: scale(1.15) translate(5%);
-                    }
                 }
             }
         }
@@ -824,7 +821,7 @@ section.contacts {
 
 
 // ========= RESPONSIVITY ========== //
-@media screen and (max-width: 1700px) {
+@media only screen and (max-width: 1700px) {
 .section-about {
     height: em(800);
     .about-container {
@@ -846,7 +843,7 @@ section.my-codes {
 }
 
 
-@media screen and (max-width: 1500px) {
+@media only screen and (max-width: 1500px) {
     .section-about {
         height: em(700);
         padding-bottom: 0;
@@ -904,7 +901,7 @@ section.my-codes {
 }
 
 
-@media screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
     .hero {
         nav {
             height: em(60);
@@ -1103,7 +1100,7 @@ section.my-codes {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
     .hero {
         nav {
             .navbar-menu {
@@ -1187,6 +1184,7 @@ section.my-codes {
             flex-direction: column;
             .study-left, .study-right {
                 width: 70%;
+                margin: 0 auto;
             }
         }
     }
@@ -1281,10 +1279,7 @@ section.my-codes {
     }
 }
 
-@media screen and (max-width: 900px) {
-    .hero {
-        background-position: 40% 0;
-    }
+@media only screen and (max-width: 900px) {
     section.my-codes {
         .codes-container {
             .code-frame {
@@ -1294,10 +1289,7 @@ section.my-codes {
     }
 }
 
-@media screen and (max-width: 800px) {
-    .hero {
-        background-position: 40% 0;
-    }
+@media only screen and (max-width: 800px) {
     section.my-codes {
         .codes-container {
             .code-frame {
@@ -1308,9 +1300,8 @@ section.my-codes {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .hero {
-        background-position: 30% 0;
         nav {
             .navbar-menu {
                 margin: 0;
@@ -1373,7 +1364,7 @@ section.my-codes {
                 width: 70%;
             }
             .study-left {
-                transform: scale(0.7)
+                transform: scale(.7)
             }
         }
     }
@@ -1491,10 +1482,11 @@ section.my-codes {
     }
 }
 
-@media screen and (max-width: 640px) {
+@media only screen and (max-width: 640px) {
     .hero {
-        background-position: 50% 0;
         nav {
+            max-width: 100%;
+            position: absolute;
             .navbar-menu {
                 li {
                     font-size: em(15);
@@ -1531,6 +1523,12 @@ section.my-codes {
         .study-container {
             .study-left, .study-right {
                 width: 85%;
+            }
+
+            .study-left {
+                .outline {
+                    right: em(20);
+                }
             }
 
             .study-right {
@@ -1584,12 +1582,26 @@ section.my-codes {
                     width: 90%;
                     font-size: em(14);
                 }
+                .ecommerce-right {
+                    .img-wrapper {
+                        img {
+                            position: static;
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+                }
             }
 
             .study-marketing {
                 .marketing-left, .marketing-right {
                     width: 90%;
                     font-size: em(14);
+                }
+
+                .marketing-left {
+                    margin: 0 auto;
+                    width: max-content;
                 }
             }
         }

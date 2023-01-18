@@ -1,30 +1,152 @@
+window.onload = function () {heroAnimation()}
+window.onscroll = function() {showNavigationBackground(), followElements(), codeFrameChecker()}
+
+function heroAnimation() {
+	let heroHeadline = document.querySelector(".hero-headline")
+	heroHeadline.style.animation = "scale-from-nowhere 2s 1s forwards, change-opacity 2s 1s forwards"
+	heroHeadline.style.visibility = "visible"
+}
+
+animatedElements = [
+	aboutMiddle = {
+		element : document.querySelector(".middle img"),
+		animation: "scale-from-nowhere 2s forwards, change-width 2s forwards",
+		position: 700,
+		positionChecker: function() {
+			return this.element.getBoundingClientRect().top
+		}
+	},
+	aboutHandWave = {
+		element : document.querySelector("i.wave"),
+		animation: "rotate-hand 0.4s 20 forwards",
+		position: 500,
+		positionChecker: function() {
+			return this.element.getBoundingClientRect().top
+		}
+	},
+	ecommerceImage = {
+		element : document.querySelector(".ecommerce-right img"),
+		animation: "slide-left 2s forwards, roll-into 2s forwards",
+		position: 500,
+		positionChecker: function() {
+			return this.element.getBoundingClientRect().top
+		}
+	},
+	marketingLogo = {
+		element : document.querySelector(".marketing-left img"),
+		animation: "rotate-shake 0.2s 2 forwards",
+		position: 500,
+		positionChecker: function() {
+			return this.element.getBoundingClientRect().top
+		}
+	}
+
+]
+
+function followElements() {
+	for (elem of animatedElements) {
+		if (elem.positionChecker() < elem.position) {
+			elem.element.style.animation = elem.animation
+		}
+	}
+}
+
+
+//NAVBAR BACKGROUND AFTER SCROLL
+function showNavigationBackground() {
+	if (document.documentElement.scrollTop > 500) {
+		document.querySelector("nav").className = "scrolled";
+	  } else {
+		document.querySelector("nav").className = "";
+	  }
+}
+
+
+// SECTION COURSES
 $(document).ready(function() {
 	$('.carousel').carousel();
 });
 
 
-let frame = document.querySelectorAll('.line')
-let i = 1
-let totalDelay = 0
-let multiplier = 0.05
-for (line of frame) {
-	if (i < frame.length) {
-		let beforeStyles = window.getComputedStyle(line, '::before')
-		let afterStyles = window.getComputedStyle(line, '::after')
-		if (i != 1) {
-			line.style.setProperty('--delay', `${totalDelay + 1.5}s`)
-			line.style.setProperty('--start', `${totalDelay}s`)
+// SECTION MY-CODES
+function typewriterEfect() {
+	let frame = document.querySelectorAll('.line')
+	let i = 1
+	let totalDelay = 0
+	let multiplier = 0.03
+	for (line of frame) {
+		if (i < frame.length) {
+			if (i != 1) {
+				line.style.setProperty('--delay', `${totalDelay + 1.5}s`)
+				line.style.setProperty('--start', `${totalDelay}s`)
+			}
+			line.style.setProperty('--duration', `${line.innerText.length * multiplier}s`)
+			line.style.setProperty('--steps', `${line.innerText.length}`)
+			totalDelay = totalDelay + 1.7 + (line.innerText.length * multiplier);
+		} else {
+			line.classList.remove('line')
+			line.classList.add('last-line')
+			line.style.setProperty('--delay', `${totalDelay}s`)
 		}
-		line.style.setProperty('--duration', `${line.innerText.length * multiplier}s`)
-		line.style.setProperty('--steps', `${line.innerText.length}`)
-		totalDelay = totalDelay + 1.7 + (line.innerText.length * multiplier);
-		console.log(afterStyles.animation)
-		console.log(beforeStyles.animation)
-	} else {
-		let lineStyles = window.getComputedStyle(line)
-		line.classList.remove('line')
-		line.classList.add('last-line')
-		line.style.setProperty('--delay', `${totalDelay}s`)
+		i++
 	}
-	i++
 }
+typewriterEfect()
+
+
+function codeFrameChecker(){
+	let codesHeadline = document.querySelector(".codes-container")
+	let codeFrame = document.querySelector(".code-frame")
+	if (codesHeadline.getBoundingClientRect().top < 400) {
+		codeFrame.style.display = "block"
+	}
+}
+
+
+//CONTACTS
+// A) Contacts carousel
+$(".planet").click(function() {
+	$('.container').attr("planet-center", this.id);
+	if (this.id == "planet1") centerPlanet1();
+	if (this.id == "planet2") centerPlanet2();
+	if (this.id == "planet3") centerPlanet3();
+ 
+ });
+ 
+ 
+ function centerPlanet1() { 
+	var tl = new TimelineMax()
+	.to('#planet1', 1, {xPercent: 0, z: 1}, 0)
+	.to('#planet2', 1, {xPercent: 140, z: -800}, 0)
+	.to('#planet3', 1, {xPercent: -140, z: -800}, 0)
+	
+ }
+ 
+ function centerPlanet2() {
+	var tl = new TimelineMax()
+	.to('#planet1', 1, {xPercent: -140, z: -800}, 0)
+	.to('#planet2', 1, {xPercent: 0, z: 1}, 0)
+	.to('#planet3', 1, {xPercent: 140, z: -800}, 0);
+ }
+ 
+ function centerPlanet3() {
+	var tl = new TimelineMax()
+	.to('#planet1', 1, {xPercent: 140, z: -800}, 0)
+	.to('#planet2', 1, {xPercent: -140, z: -800}, 0)
+	.to('#planet3', 1, {xPercent: 0, z: 1}, 0);
+ }
+ 
+ 
+ $(function() {
+   centerPlanet2();
+ })
+
+ //B) Email visibility
+ function showEmail() {
+	let email = document.querySelector("a.email")
+	email.classList.toggle("invisible")
+ }
+
+ 
+
+ 

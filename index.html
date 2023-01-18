@@ -5,20 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JaCode</title>
+    <!--FONTAWESOME-->
     <script src="https://kit.fontawesome.com/bf99e7de58.js" crossorigin="anonymous"></script>
+    <!--SECTION COURSES-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--SECTION CONTACTS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!--MY STYLES-->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header class="hero" id="hero">
         <nav>
-            <div class="navbar-logo">
-                <a href="#hero"><i class="fa-solid fa-bars"></i></a>
-            </div>
             <ul class="navbar-menu">
                 <li>
                     <a href="#about">O mne</a>
@@ -30,7 +34,7 @@
                     <a href="#my-codes">Moje kódy</a>
                 </li>
                 <li>
-                    <a href="#">Kontakt</a>
+                    <a href="#contacts">Kontakt</a>
                 </li>
             </ul>
         </nav>
@@ -94,21 +98,21 @@
                         <div class="img-wrapper">
                             <img src="./images/study-avatar.png" alt="photo of Jakub">
                         </div>
-                        <a href="#" class="outline-logo logo-1"><img src="./images/svg_icons/html5.svg" alt="html5-icon"></a>
-                        <a href="#" class="outline-logo logo-2"><img src="./images/svg_icons/css3.svg" alt="css3-icon"></a>
-                        <a href="#" class="outline-logo logo-3"><img src="./images/svg_icons/sass.svg" alt="sass-icon"></a>
-                        <a href="#" class="outline-logo logo-4"><img src="./images/svg_icons/javascript.svg" alt="javascript-icon"></a>
-                        <a href="#" class="outline-logo logo-5"><img src="./images/svg_icons/python.svg" alt="python-icon"></a>
-                        <a href="#" class="outline-logo logo-6"><img src="./images/svg_icons/django.svg" alt="django-icon"></a>
-                        <a href="#" class="outline-logo logo-7"><img src="./images/svg_icons/mysql.svg" alt="mysql-icon"></a>
-                        <a href="#" class="outline-logo logo-8"><img src="./images/svg_icons/wordpress.svg" alt="wordpress-icon"></a>
+                        <span class="outline-logo logo-1"><img src="./images/svg_icons/html5.svg" alt="html5-icon"></span>
+                        <span class="outline-logo logo-2"><img src="./images/svg_icons/css3.svg" alt="css3-icon"></span>
+                        <span class="outline-logo logo-3"><img src="./images/svg_icons/sass.svg" alt="sass-icon"></span>
+                        <span class="outline-logo logo-4"><img src="./images/svg_icons/javascript.svg" alt="javascript-icon"></span>
+                        <span class="outline-logo logo-5"><img src="./images/svg_icons/python.svg" alt="python-icon"></span>
+                        <span class="outline-logo logo-6"><img src="./images/svg_icons/django.svg" alt="django-icon"></span>
+                        <span class="outline-logo logo-7"><img src="./images/svg_icons/mysql.svg" alt="mysql-icon"></span>
+                        <span class="outline-logo logo-8"><img src="./images/svg_icons/wordpress.svg" alt="wordpress-icon"></span>
                     </div>
                 </div>
                 <div class="study-right">
                     <h3>Frontend</h3>
-                    <p>Tak ako väčšina začínajúcich programátorov aj <strong>ja som začal s tvorbou webov</strong>. Najskôr s jazykmi <strong>HTML</strong> a <strong>CSS</strong>. Neskôr som sa dostal k programovaciemu jazyku <strong>Javascript</strong>, ktorý je mojou srdcovkou. Postupne som sa dozvedel o ďalších technológiách ako SASS, Bootstrap, JQuery, Typescript, React, Angular a iné. Tie samozrejme neovládam všetky, avšak niektorým z nich sa ešte určite pozriem pod zúbok. &#128521;</p>
+                    <p>Tak ako väčšina začínajúcich programátorov aj <strong>ja som začal s tvorbou webov</strong>. Najskôr s jazykmi <strong>HTML</strong> a <strong>CSS</strong>. Neskôr som sa dostal k programovaciemu jazyku <strong>Javascript</strong>, ktorý je mojou srdcovkou. Postupne som sa dozvedel o ďalších technológiách ako SASS, Bootstrap, JQuery, Typescript, React, Angular a iné. Tie samozrejme neovládam všetky, avšak niektorým z nich sa ešte určite rád pozriem na zúbok. &#x1F9D0;&#x1F9B7;</p>
                     <h3>Backend</h3>
-                    <p>Ako išiel čas, došlo aj na Backend. Frontend technológie ma zatiaľ bavia viac, avšak nechcem zostať iba pri tom. <strong>Vybral som si jazyk Python.</strong> Konkrétne som sa rozhodol pre platený kurz Pythonu od <a href="https://sdacademy.sk/" target="_blank">Software Development Academy</a>. Aktuálne som v záverečnej fáze, kedy ma čaká už len vypracovanie finálneho projektu a koncom januára 2023 budem <strong>na konci tohto 8 mesačného kurzu.</strong></p>
+                    <p>Ako išiel čas, došlo aj na Backend. Frontend technológie ma zatiaľ bavia viac, avšak nechcem zostať iba pri tom. <strong>Vybral som si jazyk Python.</strong> Konkrétne som sa rozhodol pre platený kurz Pythonu od <a href="https://sdacademy.sk/" target="_blank">Software Development Academy</a>. Aktuálne som v záverečnej fáze, kedy ma čaká už len vypracovanie finálneho <a href="https://github.com/pettrop/tournament-app/graphs/contributors" target="_blank">Django projektu</a> a koncom januára 2023 budem <strong>na konci tohto 8 mesačného kurzu.</strong></p>
                     <p>Kurz je v celku komplexný a okrem samotných základov jazyku Python záhŕňa mnoho iných poznatkov ako napríklad:</p>
                     <ul>
                         <li>Python Basics</li>
@@ -230,7 +234,9 @@
                     <p>V rokoch 2020 a 2021 som pracoval na <strong>vlastnom Ecommerce projekte a cez eshop</strong> som predával svoje produkty. Konkrétne išlo o mnou vymyslené spoločenské hry s názvom <a href="https://www.instagram.com/beer_challenge/" target="_blank">Beer Challenge</a>. Samotný eshop som si zakladal cez CMS systém <strong>Wordpress</strong>. Práve vďaka tomu som sa s ním naučil pracovať. So samotným projektom som bol úspešný, avšak rozhodol som sa projekt na nejaký čas pozastaviť, pričom dôvodom bolo práve to, že <strong>som sa čoraz viac dozvedal o programovaní a chcel som sa tomu začať naplno venovať</strong>.</p>
                 </div>
                 <div class="ecommerce-right">
-                    <img src="./images/beerchallenge4.png" alt="beer challenge games">
+                    <div class="img-wrapper">
+                        <img src="./images/beerchallenge4.png" alt="beer challenge games">
+                    </div>
                 </div>
             </div>
             <div class="study-marketing">
@@ -249,24 +255,59 @@
             <i class="fa-solid fa-code"></i>
             <h2>Moje kódy</h2>
             <div class="code-frame">
-                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">h1</span><em class="tag-frame">&gt;</em>Ahoj!<em class="tag-frame">&lt;/</em><span class="colored">h1</span><em class="tag-frame">&gt;</em>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">h1</span><em class="tag-frame">&gt;</em>Ahoj!<em class="tag-frame">&lt;/</em><span class="colored">h1</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
-                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Všetky moje kódy nájdeš na mojom GitHub profile.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;</em>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Všetky moje kódy nájdeš na mojom GitHub profile.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
-                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Na môj profil sa dostaneš cez nasledujúci odkaz:<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;</em>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Na ten sa dostaneš cez nasledujúci odkaz:<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
-                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">a </span><em class="tag-class">href</em>=<em class="tag-class-value"><a href="https://github.com/jakubzemla" target="_blank">"https://github.com/jakubzemla" </a></em><em class="tag-class">target</em>=<em class="tag-class-value">"_blank"</em><em class="tag-frame">&gt;</em><a href="https://github.com/jakubzemla" target="_blank">Môj GitHub.</a><em class="tag-frame">&lt;/</em><span class="colored">a</span><em class="tag-frame">&gt;</em>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">a </span><em class="tag-class">href</em>=<em class="tag-class-value"><a href="https://github.com/jakubzemla" target="_blank">"https://github.com/jakubzemla" </a></em><em class="tag-class">target</em>=<em class="tag-class-value">"_blank"</em><em class="tag-frame">&gt;</em><a href="https://github.com/jakubzemla" target="_blank">Môj GitHub.</a><em class="tag-frame">&lt;/</em><span class="colored">a</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
-                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Mojim prvým projektom je práve táto stránka o mne.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;</em>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Mojim prvým projektom je práve táto stránka o mne.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
-                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Dúfam, že sa ti páči.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&gt;</em>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Dúfam, že sa ti páči.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
-                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Vo svojom voľnom čase pracujem aj na iných projektoch<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;</em>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Vo voľnom čase pracujem aj na iných projektoch<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
                 <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Napríklad aj tento 'typewriter efect' nájdeš v mojom repozitári.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
                 </p>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Ak som ťa zaujal a máš pre mňa pracovnú ponuku, určite mi napíš.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
+                </p>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Kontakt na mňa nájdeš o kúsok nižšie.<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
+                </p>
+                <p class="line"><em class="tag-frame">&lt;</em><span class="colored">p</span><em class="tag-frame">&gt;</em>Zatiaľ ahoj!<em class="tag-frame">&lt;/</em><span class="colored">p</span><em class="tag-frame">&gt;&nbsp;</em>
+                </p>
                 <p class="line">.</p>   
             </div>
+        </div>
+    </section>
+    <section class="contacts" id="contacts">
+        <div class="contacts-container">
+            <i class="fa-sharp fa-solid fa-keyboard"></i>
+            <h2>Napíš mi</h2>
+            <div class="container">
+                <div id="planet1" class="planet">
+                    <div class="logo-wrapper active">
+                        <img src="./images/svg_icons/facebook.svg" alt="facebook logo">
+                    </div>
+                    <a class="contact-btn" href="https://www.facebook.com/kaddal.kaiser" target="_blank">Facebook</a>
+                </div>
+                <div id="planet2" class="planet">
+                    <div class="logo-wrapper">
+                        <img src="./images/svg_icons/email.svg" alt="email logo">
+                    </div>
+                    <p class="contact-btn" onclick="showEmail()">Email</p>
+                    <a class="email invisible" href="mailto:jakubzemla@gmail.com">jakubzemla@gmail.com</a>
+                </div>
+                <div id="planet3" class="planet">
+                    <div class="logo-wrapper">
+                        <img src="./images/svg_icons/linkedin.svg" alt="linkedin logo">
+                    </div>
+                    <a class="contact-btn" href="https://www.linkedin.com/in/jakub-%C5%BEemla-723577262/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <hr class="footer-line">
+            <small>&copy; Jakub Žemla / JaCode <script>document.write(new Date().getFullYear())</script></small>
         </div>
     </section>
     <script src="./scripts/script.js"></script>

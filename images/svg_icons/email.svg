@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="email.svg"
+   width="512"
+   height="512"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview6"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="224"
+     inkscape:cy="224"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path
+     d="M 73.142857,0 C 32.8,0 0,32.8 0,73.142857 V 438.85714 C 0,479.2 32.8,512 73.142857,512 H 438.85714 C 479.2,512 512,479.2 512,438.85714 V 73.142857 C 512,32.8 479.2,0 438.85714,0 Z M 249.14286,273.94286 73.371429,160.45714 C 75.428571,142.17143 90.857143,128 109.71429,128 h 292.57142 c 18.85715,0 34.28572,14.17143 36.34286,32.45714 L 262.85714,273.94286 C 260.8,275.31429 258.4,276 256,276 c -2.4,0 -4.8,-0.68571 -6.85714,-2.05714 z m 33.6,30.74285 156.11428,-100.8 V 347.42857 C 438.85714,367.65714 422.51429,384 402.28571,384 H 109.71429 C 89.485714,384 73.142857,367.65714 73.142857,347.42857 V 203.88571 l 156.114283,100.8 c 8,5.14286 17.25715,7.88572 26.74286,7.88572 9.48571,0 18.74286,-2.74286 26.74286,-7.88572 z"
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:1.14285707"
+     inkscape:connector-curvature="0" />
+</svg>

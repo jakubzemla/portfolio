@@ -110,7 +110,7 @@ typewriterEfect()
 function codeFrameChecker(){
 	let codesHeadline = document.querySelector(".codes-container")
 	let codeFrame = document.querySelector(".code-frame")
-	if (viewportWidth > 640 && codesHeadline.getBoundingClientRect().top < 400) {
+	if (viewportWidth > 640 && codesHeadline.getBoundingClientRect().top < 300) {
 		codeFrame.style.display = "block"
 	} else if (viewportWidth <= 640) {
 		codeFrame.style.display = "block"

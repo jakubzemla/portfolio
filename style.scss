@@ -1502,13 +1502,13 @@ section.my-codes {
         .hero-items {
             .hero-headline {
                 h1 {
-                    font-size: em(20);
+                    font-size: em(35);
                 }
                 h2 {
-                    font-size: em(15);
+                    font-size: em(25);
                 }
                 p {
-                    font-size: em(13);
+                    font-size: em(20);
                 }
             }
         }
@@ -1518,6 +1518,7 @@ section.my-codes {
         .about-container {
             .left, .right {
                 font-size: em(15,16);
+                width: 90%;
             }
 
             .middle {
@@ -1625,8 +1626,7 @@ section.my-codes {
                 width: 100%;
                 min-height: 35vh;
                 font-size: em(5,16);
-                letter-spacing: -1px;
-                word-spacing: -3px;
+                letter-spacing: 0px;
             }
 
         }

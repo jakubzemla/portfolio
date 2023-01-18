@@ -1530,16 +1530,17 @@ section.contacts .contacts-container small {
     font-size: 0.875em;
   }
   .hero .hero-items .hero-headline h1, .hero .hero-items .hero-headline h2 {
-    font-size: 1.25em;
+    font-size: 2.1875em;
   }
   .hero .hero-items .hero-headline h2 {
-    font-size: 0.9375em;
+    font-size: 1.5625em;
   }
   .hero .hero-items .hero-headline p {
-    font-size: 0.8125em;
+    font-size: 1.25em;
   }
   .section-about .about-container .left, .section-about .about-container .right {
     font-size: 0.9375em;
+    width: 90%;
   }
   .section-about .about-container .middle {
     width: 100%;
@@ -1612,8 +1613,7 @@ section.contacts .contacts-container small {
     width: 100%;
     min-height: 35vh;
     font-size: 0.3125em;
-    letter-spacing: -1px;
-    word-spacing: -3px;
+    letter-spacing: 0px;
   }
   section.contacts .contacts-container .container .planet {
     width: 6.25em;

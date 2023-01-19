@@ -62,7 +62,7 @@ function followElements() {
 	for (elem of animatedElements) {
 		if (elem.responsive == true && elem.positionChecker() < elem.position) {
 			elem.element.style.animation = elem.animation
-		} else if (viewportWidth > 640 && elem.positionChecker() < elem.position) {
+		} else if (viewportWidth > 1025 && elem.positionChecker() < elem.position) {
 			elem.element.style.animation = elem.animation
 		}
 	}
@@ -118,7 +118,13 @@ function codeFrameChecker(){
 		codeFrame.style.display = "block"
 	} else if (viewportWidth <= 640 && codesHeadline.getBoundingClientRect().top < 500) {
 		codeFrame.style.display = "block"
-	}
+	} else if (viewportWidth <= 768 && codesHeadline.getBoundingClientRect().top < 600) {
+		codeFrame.style.display = "block"
+	} else if (viewportWidth <= 900 && codesHeadline.getBoundingClientRect().top < 700) {
+		codeFrame.style.display = "block"
+	} else if (viewportWidth <= 1024 && codesHeadline.getBoundingClientRect().top < 900) {
+		codeFrame.style.display = "block"
+	} 
 }
 
 

@@ -1335,6 +1335,9 @@ section.contacts .contacts-container small {
   }
   .section-study2 .study-container .study-ecommerce .ecommerce-right .img-wrapper img {
     height: 18.75em;
+    position: static;
+    display: block;
+    margin: 0 auto;
   }
   .section-study2 .study-container .study-marketing .marketing-left img {
     height: 12.5em;
@@ -1635,5 +1638,25 @@ section.contacts .contacts-container small {
     width: -moz-max-content;
     width: max-content;
     font-size: 0.75em;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .hero nav .navbar-menu li {
+    font-size: 0.625em;
+  }
+  .section-study h2 {
+    margin-bottom: 0;
+  }
+  .section-study .study-container {
+    gap: 0;
+  }
+  .section-study .study-container .study-left {
+    transform: scale(0.55);
+  }
+  .section-study .study-container .study-left .outline {
+    right: 3.4375em;
+  }
+  section.contacts .contacts-container small {
+    font-size: 0.5em;
   }
 }/*# sourceMappingURL=style.css.map */

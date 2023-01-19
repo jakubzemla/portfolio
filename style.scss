@@ -1234,6 +1234,9 @@ section.my-codes {
                     .img-wrapper {
                         img {
                             height: em(300);
+                            position: static;
+                            display: block;
+                            margin: 0 auto;
                         }
                     }
                 }
@@ -1654,6 +1657,40 @@ section.my-codes {
                         font-size: em(12,16);
                     }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .hero {
+        nav {
+            .navbar-menu {
+                li {
+                    font-size: em(10,16);
+                }
+            }
+        }
+    }
+    .section-study {
+        h2 {
+            margin-bottom: 0;
+        }
+        .study-container {
+            gap: 0;
+            .study-left {
+                transform: scale(0.55);
+                .outline {
+                    right: em(55);
+                }
+            }
+        }
+    }
+
+    section.contacts {
+        .contacts-container {
+            small {
+                font-size: em(8,16);
             }
         }
     }

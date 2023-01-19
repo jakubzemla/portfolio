@@ -1615,7 +1615,7 @@ section.contacts .contacts-container small {
     padding: 0.75em;
     width: 100%;
     min-height: 30vh;
-    font-size: 0.25em;
+    font-size: 0.1875em;
     letter-spacing: 0px;
   }
   section.contacts .contacts-container .container .planet {

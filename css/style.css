@@ -1609,10 +1609,10 @@ section.contacts .contacts-container small {
     width: 98%;
   }
   section.my-codes .codes-container .code-frame {
-    padding: 0.8333333333em;
+    padding: 0.75em;
     width: 100%;
-    min-height: 35vh;
-    font-size: 0.3125em;
+    min-height: 30vh;
+    font-size: 0.25em;
     letter-spacing: 0px;
   }
   section.contacts .contacts-container .container .planet {

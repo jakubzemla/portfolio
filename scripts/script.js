@@ -1,19 +1,23 @@
 window.onload = function () {heroAnimation()}
 window.onscroll = function() {showNavigationBackground(), followElements(), codeFrameChecker()}
 
+
+//VIEWPORT CONTROL
 var viewportWidth = window.innerWidth
 function resizeControl() {
 	viewportWidth = window.innerWidth
 	console.log(viewportWidth)
 }
 
+
+// HERO ANIMATION ON LOAD
 function heroAnimation() {
 	let heroHeadline = document.querySelector(".hero-headline")
 	heroHeadline.style.animation = "scale-from-nowhere 2s 1s forwards, change-opacity 2s 1s forwards"
 	heroHeadline.style.visibility = "visible"
 }
 
-
+// ANIMATION TIMING
 animatedElements = [
 	aboutMiddle = {
 		element : document.querySelector(".middle img"),
@@ -112,7 +116,7 @@ function codeFrameChecker(){
 	let codeFrame = document.querySelector(".code-frame")
 	if (viewportWidth > 640 && codesHeadline.getBoundingClientRect().top < 300) {
 		codeFrame.style.display = "block"
-	} else if (viewportWidth <= 640) {
+	} else if (viewportWidth <= 640 && codesHeadline.getBoundingClientRect().top < 500) {
 		codeFrame.style.display = "block"
 	}
 }

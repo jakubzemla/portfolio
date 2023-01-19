@@ -1618,6 +1618,9 @@ section.contacts .contacts-container small {
     font-size: 0.1875em;
     letter-spacing: 0px;
   }
+  section.my-codes .codes-container .code-frame p {
+    font-size: 0.1875em;
+  }
   section.contacts .contacts-container .container .planet {
     width: 6.25em;
   }
